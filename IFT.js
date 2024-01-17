@@ -228,13 +228,13 @@ document.addEventListener('sessionStorageReady', async function (e) {
     });
 
     // Doug, this is the function that sends the data
-    function call_rlhf_backend(keywords, bad_votes_array, good_votes_array, mission_votes_array) {
+    function call_rlhf_backend(resumeObject) {
         fetch("https://rqga4d4m82.execute-api.us-east-2.amazonaws.com/beta_stage2/rlhf_system", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ keywords, bad_votes_array, good_votes_array, mission_votes_array }), // ADDED MISSION VOTES, TODO: HANDLE
+            body: JSON.stringify({ resumeObject }), // ADDED MISSION VOTES, TODO: HANDLE
         })
             .then(response => response.json())
             .then(data => {
