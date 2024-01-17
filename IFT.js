@@ -72,7 +72,11 @@ document.addEventListener('DOMContentLoaded', async function (e) {
     // let oldText = await readTextFile("../files/oldText_data.txt");
     // let newText = await readTextFile("../files/newText_data.txt");
 
-    console.log('Event received:', e.detail.message);
+    document.addEventListener('sessionStorageReady', function(e) {
+        console.log('Received custom event:', e.detail.message);
+        // Add your custom logic here
+    });
+    
     let oldText = sessionStorage.getItem("oldText");
     console.log(oldText);
     let newText = sessionStorage.getItem("newText");
