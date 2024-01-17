@@ -3,8 +3,8 @@ resumeObject = {
 };
 
 // internal fine tuning javascript to replicate what is in webflow
-const rebuildButton = document.getElementById("rebuild_button")
-rebuildButton.style.display = "none"
+// const rebuildButton = document.getElementById("rebuild_button")
+// rebuildButton.style.display = "none"
 function alignBullets(leftBullets, rightBullets) {
     const container = document.getElementById('diff_checker');
     for (let i = 0; i < leftBullets.count; i++) {
@@ -262,22 +262,3 @@ document.addEventListener('DOMContentLoaded', async function (e) {
 
 });
 
-// Object Construction
-
-// Pass the good_votes_array into here
-function Jobs(name, bullets) {
-    // Properties
-    this.jobName = name;
-    this.rawBullets = bullets;
-    this.leftBullets = bullets.left;
-    this.rightBullets = bullets.right;
-}
-
-// Pass additional info + Jobs Obj into here
-function Resume(id, keywords, mission, jobs) {
-    // Properties
-    this.resumeID = id;
-    this.keywords = keywords;
-    this.missionStatement = mission;
-    this.jobList = jobs
-}
