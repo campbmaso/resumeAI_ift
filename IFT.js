@@ -63,19 +63,17 @@ async function readTextFile(file) {
 }
 
 // This is where the main operations take place
-document.addEventListener('DOMContentLoaded', async function (e) {
-    document.getElementById("resume-form").style.display = "none"
-    document.getElementById("resumeai_success").style.display = "block"
-    document.getElementById("loading-section").style.display = "none"
+document.addEventListener('sessionStorageReady', async function (e) {
+    // document.getElementById("resume-form").style.display = "none"
+    // document.getElementById("resumeai_success").style.display = "block"
+    // document.getElementById("loading-section").style.display = "none"
     document.getElementById("diff_checker").style.display = "block"
 
     // let oldText = await readTextFile("../files/oldText_data.txt");
     // let newText = await readTextFile("../files/newText_data.txt");
 
-    document.addEventListener('sessionStorageReady', function(e) {
-        console.log('Received custom event:', e.detail.message);
-        // Add your custom logic here
-    });
+    console.log('Received custom event:', e.detail.message);
+
     
     let oldText = sessionStorage.getItem("oldText");
     let newText = sessionStorage.getItem("newText");
@@ -262,7 +260,6 @@ document.addEventListener('DOMContentLoaded', async function (e) {
 
         if (rebuildButton) {
             rebuildButton.style.display = 'flex';
-            rebuildButton.className = 'rebuild-button w-inline-block';
         }
     });
 
