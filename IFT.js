@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', async function (e) {
     let keywords = sessionStorage.getItem("keywords");
     keywords = "product management, software, SaaS, hello world"
     let keywords_display = keywords.replace(/,/g, ',  ');
-    keywords = JSON.parse(keywords);
+    // keywords = JSON.parse(keywords);
     resumeObject.keywords = keywords;
     console.log(keywords);
     document.getElementById('keyword_text').textContent = keywords_display;
