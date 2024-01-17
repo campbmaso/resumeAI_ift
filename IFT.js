@@ -247,16 +247,9 @@ document.addEventListener('sessionStorageReady', async function (e) {
 
     // Add an event listener for "voting_done"
     document.getElementById('voting_done').addEventListener('click', () => {
-        // Convert the good_votes object to an array
-        const good_votes_array = Object.values(good_votes);
-        const bad_votes_array = Object.values(bad_votes);
-        const mission_votes_array = Object.values(mission_votes);
+        console.log(resumeObject);
 
-        console.log(good_votes_array);
-        console.log(bad_votes_array);
-
-        call_rlhf_backend(keywords, bad_votes_array, good_votes_array, mission_votes_array)
-
+        call_rlhf_backend(resumeObject)
 
         if (rebuildButton) {
             rebuildButton.style.display = 'flex';
