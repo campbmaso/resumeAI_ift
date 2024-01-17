@@ -78,10 +78,9 @@ document.addEventListener('DOMContentLoaded', async function (e) {
     });
     
     let oldText = sessionStorage.getItem("oldText");
-    // console.log(oldText);
     let newText = sessionStorage.getItem("newText");
-    // console.log(newText);
     let keywords = sessionStorage.getItem("keywords");
+
     keywords = "product management, software, SaaS, hello world"
     let keywords_display = keywords.replace(/,/g, ',  ');
     // keywords = JSON.parse(keywords);
@@ -94,8 +93,7 @@ document.addEventListener('DOMContentLoaded', async function (e) {
 
     document.getElementById('diff_checker_block').style.display = "flex"
 
-    // console.log(oldText2);
-    // console.log(newText2);
+
     // Get the differences
     const diff = Diff.diffWords(oldText2, newText2);
 
@@ -165,6 +163,7 @@ document.addEventListener('DOMContentLoaded', async function (e) {
         if (current_index < leftBullets.count && current_index < rightBullets.count) {
             // Show the current bullet pair
             document.getElementById('block-' + current_index).style.display = 'flex';
+            console.log(resumeObject);
 
         // if there are no more bullets to show
         } else {
